@@ -1,0 +1,76 @@
+import random
+
+def display_intro():
+    title = "** A Simple Sport and Math Quiz **"
+    print("*" * len(title))
+    print(title)
+    print("*" * len(title))
+
+
+def display_menu():
+    menu_list = ["1. Sport", "2. Math", "3. Exit"]
+    print(menu_list[0])
+    print(menu_list[1])
+    print(menu_list[2])
+
+def display_separator():
+    print("-" * 24)
+
+
+def get_user_input():
+    user_input = int(input("Enter your choice: "))
+    while user_input > 3 or user_input <= 0:
+        print("Invalid menu option.")
+        user_input = int(input("Please try again: "))
+    else:
+        return user_input    
+
+
+def get_user_solution(problem):
+    print("Enter your question")
+    print(problem, end="")
+    result = int(input(" = "))
+    return result
+
+def menu_option(index, count):
+    if index is 1:
+            problem = ("which one is correct team name in NBA?",
+            "options" - [
+                "New York Bulls",
+                "Los Angeles Kings",
+                "Golden State Warriors",
+                "Husten Rocket"
+            ],)
+        
+    elif index is 2:
+        problem = ("5 + 7  = ?",
+        "options" - [
+            "10",
+            "11",
+            "12",
+            "13"
+        ],)
+    
+    
+
+
+def display_result(total, correct):
+    if total > 0:
+        result = correct / total
+        percentage = round((result * 100), 2)
+    if  total == 0:
+        percentage = 0
+    print("You answered", total, "questions with", correct, "correct.")
+    print("Your score is ", percentage, "%. Thank you.", sep = "")
+
+
+def main():
+    display_intro()
+    display_menu()
+    display_separator()
+
+
+    print("Exit the quiz.")
+    display_separator()
+
+main()
